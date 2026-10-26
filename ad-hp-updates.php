@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Updates for HivePress Products
- * Description: Get updates for purchased themes and extensions for HivePress.
+ * Description: Get updates for products for HivePress.
  * Version: 1.0.0
  * Author: alokhinDev
  * Author URI: https://alokhin.dev/

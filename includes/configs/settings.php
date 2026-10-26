@@ -18,7 +18,7 @@ return [
 				'fields' => [
 					'alokhin_dev_license_key' => [
 						'label'       => esc_html__( 'License Keys', 'ad-hp-updates' ),
-						'description' => esc_html__( 'Please enter the license keys for purchased themes and extensions, each key on a new line.', 'ad-hp-updates' ),
+						'description' => esc_html__( 'Please enter the license keys for purchased products, each key on a new line.', 'ad-hp-updates' ),
 						'type'        => 'textarea',
 						'max_length'  => 2048,
 						'_order'      => 10,

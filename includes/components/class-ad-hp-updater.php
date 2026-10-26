@@ -15,9 +15,9 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Updater component class.
  *
- * @class AD_Updater
+ * @class AD_HP_Updater
  */
-final class AD_Updater extends Component {
+final class AD_HP_Updater extends Component {
 
 	/**
 	 * Class constructor.
@@ -25,11 +25,6 @@ final class AD_Updater extends Component {
 	 * @param array $args Component arguments.
 	 */
 	public function __construct( $args = [] ) {
-
-		// Check license key.
-		if ( ! get_option( 'hp_alokhin_dev_license_key' ) ) {
-			return;
-		}
 
 		// Check plugin updates.
 		add_filter( 'pre_set_site_transient_update_plugins', [ $this, 'check_plugin_updates' ] );
@@ -60,7 +55,7 @@ final class AD_Updater extends Component {
 		$license_key = $this->get_license_key();
 
 		// Get cache key.
-		$cache_key = 'plugins_' . md5( $license_key );
+		$cache_key = 'ad_hp_plugins_' . md5( $license_key );
 
 		// Get cached plugins.
 		$plugins = hivepress()->cache->get_cache( $cache_key );
@@ -72,7 +67,7 @@ final class AD_Updater extends Component {
 			$response = json_decode(
 				wp_remote_retrieve_body(
 					wp_remote_get(
-						'https://store.hivepress.io/api/v1/products?' . http_build_query(
+						'https://alokhin.dev/wp-json/hivepress/v1/alokhin-dev/products?' . http_build_query(
 							[
 								'type'        => 'extension',
 								'license_key' => $license_key,
@@ -100,7 +95,7 @@ final class AD_Updater extends Component {
 						'package'       => $extension['download_url'],
 						'download_link' => $extension['download_url'],
 						'plugin'        => $extension['slug'] . '/' . $extension['slug'] . '.php',
-						'author'        => '<a href="https://hivepress.io/" target="_blank">HivePress</a>',
+						'author'        => '<a href="https://alokhin.dev/" target="_blank">alokhinDev</a>',
 						'banners'       => [],
 						'banners_rtl'   => [],
 						'compatibility' => (object) [],
