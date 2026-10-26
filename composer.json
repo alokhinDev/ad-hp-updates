@@ -1,0 +1,8 @@
+{
+  "name": "alokhindev/ad-hp-updates",
+  "description": "Updates manager for alokhin.dev products for HivePress.",
+  "type": "wordpress-plugin",
+  "license": "GPL-3.0-or-later",
+  "minimum-stability": "stable",
+  "require": {}
+}
