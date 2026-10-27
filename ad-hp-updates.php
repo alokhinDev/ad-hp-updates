@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Updates for HivePress Products
  * Description: Updates manager for alokhin.dev products for HivePress.
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author: alokhinDev
  * Author URI: https://alokhin.dev/
  * Text Domain: ad-hp-updates
