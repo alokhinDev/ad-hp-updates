@@ -5,6 +5,8 @@
  * @package HivePress\Configs
  */
 
+use HivePress\Helpers as hp;
+
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
@@ -18,7 +20,8 @@ return [
 				'fields' => [
 					'alokhin_dev_license_key' => [
 						'label'       => esc_html__( 'License Keys', 'ad-hp-updates' ),
-						'description' => esc_html__( 'Please enter the license keys for purchased products, each key on a new line.', 'ad-hp-updates' ),
+						/* translators: %s: terms URL. */
+						'description' => sprintf( hp\sanitize_html( __( 'Please enter the license keys for purchased products, each key on a new line. All license keys associated with the <a href="%s" target="_blank">alokhinDev store</a> start with `AD_`.', 'ad-hp-updates' ) ), 'https://alokhin.dev/hivepress-products/' ),
 						'type'        => 'textarea',
 						'max_length'  => 2048,
 						'_order'      => 10,
