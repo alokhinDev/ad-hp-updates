@@ -81,6 +81,10 @@ final class AD_HP_Updater extends Component {
 			if ( is_array( $response ) && isset( $response['data'] ) ) {
 				foreach ( $response['data'] as $extension ) {
 
+					if ( ! hp\get_array_value( $extension, 'download_url' ) ) {
+						continue;
+					}
+
 					// Add plugin.
 					$plugins[ $extension['slug'] ] = (object) [
 						'name'          => $extension['name'],
